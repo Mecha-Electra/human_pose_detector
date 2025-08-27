@@ -35,13 +35,13 @@ class PoseDetectorNode(Node):
         self.color_subscriber = message_filters.Subscriber(
             self, 
             Image, 
-            '/camera/color/image_raw', 
+            '/camera/camera/color/image_raw', 
             qos_profile=qos_profile)
         
         self.depth_subscriber = message_filters.Subscriber(
             self, 
             Image, 
-            '/camera/aligned_depth_to_color/image_raw', 
+            '/camera/camera/aligned_depth_to_color/image_raw', 
             qos_profile=qos_profile)
 
         self.time_synchronizer = message_filters.ApproximateTimeSynchronizer(

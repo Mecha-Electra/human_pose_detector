@@ -20,8 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pose_publisher = human_pose_detector.pose_publisher:main',
-            'pose_subscriber = human_pose_detector.pose_subscriber:main',
             'pose_tf_publisher = human_pose_detector.pose_tf_publisher:main',
         ],
     },

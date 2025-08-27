@@ -26,12 +26,12 @@ class PoseTFPublisherNode(Node):
         # --- Subscribers ---
         self.info_subscriber = self.create_subscription(
             CameraInfo,
-            '/camera/color/camera_info',
+            '/camera/camera/color/camera_info',
             self.info_callback,
             10)
 
-        self.color_subscriber = message_filters.Subscriber(self, Image, '/camera/color/image_raw')
-        self.depth_subscriber = message_filters.Subscriber(self, Image, '/camera/aligned_depth_to_color/image_raw')
+        self.color_subscriber = message_filters.Subscriber(self, Image, '/camera/camera/color/image_raw')
+        self.depth_subscriber = message_filters.Subscriber(self, Image, '/camera/camera/aligned_depth_to_color/image_raw')
 
         self.time_synchronizer = message_filters.ApproximateTimeSynchronizer(
             [self.color_subscriber, self.depth_subscriber], 10, 0.1)
